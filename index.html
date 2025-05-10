@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Academia FACEF</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-lightning-charge-fill"></i>
+                Academia FACEF
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="bi bi-house-fill"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre"><i class="bi bi-trophy-fill"></i> Academia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos"><i class="bi bi-gear-fill"></i> Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#saude"><i class="bi bi-heart-pulse-fill"></i> Saúde</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contatos"><i class="bi bi-envelope-fill"></i> Contatos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Transforme seu corpo,<br>Transforme sua vida</h1>
+            <p>Comece sua jornada fitness hoje mesmo!</p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <div class="welcome-text">
+                    <h2 class="section-title" id="sobre">Bem-vindo à Academia FACEF</h2>
+                    <p class="lead">Transforme sua vida através do exercício físico e bem-estar. Nossa academia oferece
+                        equipamentos modernos e profissionais qualificados para te ajudar a alcançar seus objetivos.</p>
+                    <p>Comece sua jornada fitness calculando seu IMC e receba orientações personalizadas para seu
+                        treino.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#matriculaModalCenter">
+
+                        Realizar Matricula
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="calculator-form">
+                    <h3 class="text-center mb-4">Calculadora de IMC</h3>
+                    <form id="formIMC">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="nome" name="nome" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="peso" class="form-label">Peso (kg):</label>
+                            <input type="number" class="form-control" id="peso" name="peso" step="0.1" required
+                                placeholder="Digite seu peso em quilogramas" style="color: white;">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="altura" class="form-label">Altura (cm):</label>
+                            <input type="number" class="form-control" id="altura" name="altura" step="0.01" required
+                                placeholder="Digite sua altura em metros" style="color: white;">
+                        </div>
+
+                        <div class="d-grid gap-2 d-flex justify-content-between">
+                            <button type="button" class="btn btn-primary calculate-btn flex-grow-1" onclick="calcularIMC()">Calcular
+                                IMC</button>
+                            <button type="button" class="btn btn-secondary flex-grow-1" onclick="limparFormularioIMC()">Limpar</button>
+                        </div>
+                    </form>
+                    <div id="resultado" class="alert mt-3 d-none text-black"></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="modalidades-section" id="servicos">
+            <h2 class="text-center section-title mb-5">Nossas Modalidades</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="modalidade-img">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48" alt="Academia FACEF"
+                            class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="modalidade-card">
+                                <i class="bi bi-lightning-charge-fill"></i>
+                                <h3>Musculação</h3>
+                                <p>Equipamentos modernos e ambiente espaçoso para seu treino de força.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="modalidade-card">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                                <h3>Fitness</h3>
+                                <p>Aulas dinâmicas de ginástica, dança e muito mais.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="modalidade-card">
+                                <i class="bi bi-water"></i>
+                                <h3>Natação</h3>
+                                <p>Piscina aquecida com aulas para todas as idades.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="modalidade-card">
+                                <i class="bi bi-bicycle"></i>
+                                <h3>Aeróbico</h3>
+                                <p>Esteiras, bikes e equipamentos para cardio de última geração.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="beneficios-section mt-5" id="saude">
+            <h2 class="text-center section-title mb-5">Por que escolher a Academia FACEF?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="beneficio-card">
+                        <i class="bi bi-person-check-fill"></i>
+                        <h3>Profissionais Qualificados</h3>
+                        <p>Equipe de instrutores especializados para te orientar.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="beneficio-card">
+                        <i class="bi bi-clock-fill"></i>
+                        <h3>Horário Flexível</h3>
+                        <p>Academia aberta todos os dias com horários estendidos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="beneficio-card">
+                        <i class="bi bi-gear-fill"></i>
+                        <h3>Equipamentos Modernos</h3>
+                        <p>Aparelhos de última geração para seu treino.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="matricula-section text-center mt-5 mb-5">
+            <div class="container">
+                <h2 class="section-title mb-4">Comece sua jornada fitness hoje!</h2>
+                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#matriculaModalCenter">
+                    Realizar Matrícula
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer-section py-5" id="contatos">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Contato</h5>
+                    <ul class="list-unstyled footer-contact">
+                        <li><i class="bi bi-telephone-fill me-2"></i> (11) 1234-5678</li>
+                        <li><i class="bi bi-envelope-fill me-2"></i> contato@exemplo.com</li>
+                        <li><i class="bi bi-geo-alt-fill me-2"></i> Rua Exemplo, 123 - São Paulo, SP</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Redes Sociais</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Horário de Funcionamento</h5>
+                    <ul class="list-unstyled footer-hours">
+                        <li><i class="bi bi-clock-fill me-2"></i> Segunda a Sexta: 6h às 22h</li>
+                        <li><i class="bi bi-clock-fill me-2"></i> Sábado: 8h às 18h</li>
+                        <li><i class="bi bi-clock-fill me-2"></i> Domingo: 8h às 14h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="mb-0">© 2023 Academia FACEF - Todos os direitos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12 text-center">
+            <hr class="bg-light">
+            <p class="mb-0">&copy; 2024 Seu Nome ou Empresa. Todos os direitos reservados.</p>
+        </div>
+    </div>
+    </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="matriculaModalCenter" tabindex="-1" aria-labelledby="matriculaModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content" style="background-color: var(--card-bg);">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100 text-center text-white">Sua matrícula agora</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formMatricula">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="nome" required>
+                        </div>
+                        <div class="mb-3 d-flex gap-2">
+                            <div class="flex-grow-1">
+                                <label for="cep" class="form-label">CEP:</label>
+                                <input type="text" class="form-control" id="cep">
+                            </div>
+                            <div class="d-flex align-items-end gap-2">
+                                <button type="button" class="btn btn-info" onclick="pesquisacep(document.getElementById('cep').value)">Consultar</button>
+                                <button type="button" class="btn btn-outline-danger" onclick="limpa_formulário_cep()">Limpar</button>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="logradouro" class="form-label">Logradouro:</label>
+                            <input type="text" class="form-control" id="logradouro">
+                        </div>
+                        <div class="mb-3 d-flex">
+                            <div class="me-2 flex-fill">
+                                <label for="numero" class="form-label">Nº:</label>
+                                <input type="text" class="form-control" id="numero">
+                            </div>
+                            <div class="flex-fill">
+                                <label for="complemento" class="form-label">Compl:</label>
+                                <input type="text" class="form-control" id="complemento">
+                            </div>
+                        </div>
+                        <div class="mb-3 d-flex">
+                            <div class="me-2 flex-fill">
+                                <label for="bairro" class="form-label">Bairro:</label>
+                                <input type="text" class="form-control" id="bairro">
+                            </div>
+                            <div class="flex-fill">
+                                <label for="cidade" class="form-label">Cidade:</label>
+                                <input type="text" class="form-control" id="cidade">
+                            </div>
+                        </div>
+                        <div class="mb-3 d-flex">
+                            <div class="me-2 flex-fill">
+                                <label for="estado" class="form-label">Estado:</label>
+                                <input type="text" class="form-control" id="estado">
+                            </div>
+                            <div class="flex-fill">
+                                <label for="pais" class="form-label">País:</label>
+                                <input type="text" class="form-control" id="pais">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" form="formMatricula" class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+        <script src="assets/js/script.js"></script>
+</body>
+
+</html>
